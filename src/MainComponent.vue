@@ -2,8 +2,10 @@
      <main class="pt-6">
       <div class="container">
         <div class="row row-cols-5">
-          <div class="col gy-3" v-for="(album, index) in musicList" :key="index"></div>
-          <CardComponent :poster="album.poster" :titolo="album.title" :autore="album.author" />
+          <div class="col gy-3" v-for="(album, index) in musicList" :key="index">
+              <CardComponent :poster="album.poster" :titolo="album.title" :autore="album.author" />
+          </div>
+          
           <!-- /.col -->
         </div>
         <!-- /.row row-cols-5 -->
