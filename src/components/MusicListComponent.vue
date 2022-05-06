@@ -2,7 +2,7 @@
   <div class="container" v-if="!loading">
     <div class="row row-cols-5">
       <CardComponent
-        v-for="(album, index) in musicList"
+        v-for="(album, index) in filterGenre"
         :key="index"
         :poster="album.poster"
         :titolo="album.title"
@@ -20,6 +20,7 @@
 import axios from "axios";
 import CardComponent from "@/components/CardComponent.vue";
 import loaderComponent from "@/components/LoaderComponent.vue"
+import state from "@/state.js"
 
 
 export default {
@@ -34,6 +35,7 @@ export default {
       response: null,
       musicList: null,
       loading: true,
+      disco: null
     };
   },
   methods: {
@@ -55,5 +57,12 @@ export default {
   mounted() {
     this.callApi();
   },
+  computed: {
+    filterGenre(){
+      return this.musicList.filter(disco => {
+        return disco.genre.toLowerCase().includes(state.selectValue.toLowerCase())
+      })
+    }
+  }
 };
 </script>

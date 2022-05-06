@@ -1,7 +1,7 @@
 import Vue from 'vue';
 
 const state = Vue.observable({
-    selectValue: ''
+    selectValue: '',
 })
 
 export default state
