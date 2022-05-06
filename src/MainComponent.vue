@@ -33,15 +33,16 @@ export default {
   },
   data() {
     return {
-      link: "https://flynn.boolean.careers/exercises/api/array/music",
+      API_URL: "https://flynn.boolean.careers/exercises/api/array/music",
       response: null,
       musicList: null,
       loading: true,
     };
   },
-  mounted() {
-    axios
-      .get(this.link)
+  methods: {
+    callApi() {
+       axios
+      .get(this.API_URL)
       .then((response) => {
         console.log(response);
         this.musicList = response.data.response;
@@ -52,6 +53,10 @@ export default {
         console.log(error);
         this.error = `  OPS! ${error.message}`
       });
+    }
+  },
+  mounted() {
+   this.callApi();
   },
 };
 </script>
