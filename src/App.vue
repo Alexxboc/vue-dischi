@@ -8,8 +8,8 @@
 
 <script>
 
-import SiteHeader from "@/HeaderComponent.vue";
-import SiteMain from "@/MainComponent.vue"
+import SiteHeader from "@/components/HeaderComponent.vue";
+import SiteMain from "@/components/MainComponent.vue"
 
 export default {
   name: "App",
