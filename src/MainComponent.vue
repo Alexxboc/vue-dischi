@@ -7,6 +7,7 @@
             :poster="album.poster"
             :titolo="album.title"
             :autore="album.author"
+            :anno="album.year"
           />
         </div>
 
