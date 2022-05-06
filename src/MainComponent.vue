@@ -1,6 +1,6 @@
 <template>
-  <main class="pt-6">
-    <div class="container" v-if="!loading">
+  <main class="pt-6" v-if="!loading">
+    <div class="container">
       <div class="row row-cols-5">
         <div class="col gy-3" v-for="(album, index) in musicList" :key="index">
           <CardComponent
@@ -16,8 +16,9 @@
       <!-- /.row row-cols-5 -->
     </div>
     <!-- /.container -->
-    <loaderComponent v-else />
+    
   </main>
+  <loaderComponent v-else />
 </template>
 
 <script>
@@ -49,6 +50,7 @@ export default {
       })
       .catch((error) => {
         console.log(error);
+        this.error = `  OPS! ${error.message}`
       });
   },
 };

@@ -16,8 +16,7 @@ export default {
 
 <style lang="scss" scoped>
 .loading {
-  height: 100vh;
-  width: 100vw;
+  height: 1000px;
   background-color: white;
 }
 </style>
