@@ -2,16 +2,16 @@
   <main class="pt-6" v-if="!loading">
     <div class="container">
       <div class="row row-cols-5">
-        <div class="col gy-3" v-for="(album, index) in musicList" :key="index">
-          <CardComponent
+        
+          <CardComponent v-for="(album, index) in musicList" :key="index"
             :poster="album.poster"
             :titolo="album.title"
             :autore="album.author"
             :anno="album.year"
           />
-        </div>
+        
 
-        <!-- /.col -->
+        
       </div>
       <!-- /.row row-cols-5 -->
     </div>
