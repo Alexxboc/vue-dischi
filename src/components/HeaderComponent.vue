@@ -5,7 +5,11 @@
         <img width="60" src="@/assets/logo-small.svg" />
       </div>
       <!-- /.logo -->
-      <SelectGenre v-model="selectValue" @selection="changeValue"/>
+      <div class="selection d-flex">
+        <SelectGenre v-model="selectValue" @selection="changeValue" />
+        <SelectAuthor v-model="selectAuthor" @selection="changeAuthor" />
+      </div>
+      <!-- /.selection -->
     </div>
     <!-- /.navbar -->
   </header>
@@ -13,25 +17,32 @@
 
 <script>
 import SelectGenre from "@/components/SelectGenreComponent.vue";
+import SelectAuthor from "@/components/SelectAuthorComponent.vue";
 import state from "@/state.js";
 export default {
   name: "SiteHeader",
   components: {
-    SelectGenre
+    SelectGenre,
+    SelectAuthor,
   },
   data() {
     return {
-      selectValue: ''
-    }
+      selectValue: "",
+      selectAuthor: ""
+    };
   },
   methods: {
     changeValue() {
-      console.log(this.selectValue);
-      state.selectValue = this.selectValue
-      console.log(state);
-    
+      // console.log(this.selectValue);
+      state.selectValue = this.selectValue;
+      // console.log(state);
+    },
+    changeAuthor() {
+      // console.log(this.selectAuthor);
+      state.selectAuthor = this.selectAuthor;
+      //  
     }
-  }
+  },
 };
 </script>
 

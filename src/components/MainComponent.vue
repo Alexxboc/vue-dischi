@@ -1,5 +1,5 @@
 <template>
-  <main class="pt-6">
+  <main class="pt-5">
     <MusicList />
   </main>
 </template>
