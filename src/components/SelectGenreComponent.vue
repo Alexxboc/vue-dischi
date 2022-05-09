@@ -11,14 +11,16 @@
     <option value="metal">Metal</option>
     <option value="jazz">Jazz</option>
   </select>
-  <!-- /.select -->
+  
 </template>
 
 <script>
+
 export default {
     name: 'SelectGenre',
     props: {
        selectValue: String,
     },
+    
 }
 </script>
